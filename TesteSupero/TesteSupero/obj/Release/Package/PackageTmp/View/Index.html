@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap-reboot.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap-grid.min.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body ng-app="App">
+    <!--<div ng-view></div>-->
+    <div ng-controller="TaskController" ng-cloak="" class="container">
+        <h2>{{helloTo.title}}</h2>
+        <h2>{{titulo}}</h2>
+        <form>
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="titulo">Titulo</label>
+                        <input type="text" class="form-control" id="titulo" placeholder="Titulo task" ng-model="request.Titulo">
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="descricao">Descricao</label>
+                        <input type="text" class="form-control" id="descricao" placeholder="Descricao task" ng-model="request.Descricao">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-4">
+                    <div class="form-group">
+                        <label for="status">Status</label>
+                        <select class="form-control" ng-model="request.Status">
+                            <option value="1">Ativa</option>
+                            <option value="2">Cancelada</option>
+                            <option value="3">Novo</option>
+                            <option value="4">Exlcuida</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary" ng-click="salvar()">Salvar</button>
+            <button type="submit" class="btn btn-default">Cancelar</button>
+            <button type="submit" class="btn btn-danger">Excluir</button>
+        </form>
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Titulo</th>
+                    <th>Descricao</th>
+                    <th>Status</th>
+                    <th>Data Criacao</th>
+                    <th>Acoes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="task in taskList">
+                    <td>{{ task.Id }}</td>
+                    <td>{{ task.Titulo }}</td>
+                    <td>{{ task.Descricao }}</td>
+                    <td>{{ task.StatusDescricao }}</td>
+                    <td>{{ task.DataCriacao | date:"dd/MM/yyyy" }}</td>
+                    <td><button>Editar</button></td>
+
+
+
+                </tr>
+                
+            </tbody>
+        </table>
+
+
+    </div>
+
+</body>
+<script src="../Scripts/angular.min.js"></script>
+<script src="../Scripts/angular-resource.min.js"></script>
+<script src="../Scripts/bootstrap.min.js"></script>
+<script src="../Scripts/jquery-3.0.0.min.js"></script>
+<script src="../Scripts/bootstrap.bundle.min.js"></script>
+<script src="../Scripts/Supero/main.js"></script>
+<script src="../Scripts/Supero/TaskController.js"></script>
+</html>
