@@ -13,7 +13,7 @@ Caracteristicas
 Acoes do usuario
 
     Adicionar novas tarefas;
-    Marcar e desmarcar o status de concluído;
-    Editar o conteúdo da task;
-    Deletar uma task;
+    Editar status das tarefa;
+    Editar o conteúdo da tarefa;
+    Deletar uma tarefa;
 
