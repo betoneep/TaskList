@@ -1,37 +1,45 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link href="../Content/bootstrap.min.css" rel="stylesheet" />
     <link href="../Content/bootstrap-reboot.min.css" rel="stylesheet" />
     <link href="../Content/bootstrap-grid.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <meta charset="utf-8" />
     <title></title>
 </head>
-<body ng-app="App">
+<body ng-app="App" style="padding-top: 10px">
     <!--<div ng-view></div>-->
     <div ng-controller="TaskController" ng-cloak="" class="container">
         <h2>{{helloTo.title}}</h2>
-        <h2>{{titulo}}</h2>
+        <div class="alert alert-success" role="alert" ng-show="mostrarMesangemSucesso">
+            {{mensagemSucesso}}
+        </div>
+        <div class="alert alert-danger" role="alert" ng-show="mostrarMesangemErro">
+            {{mensagemErro}}
+        </div>
+        <h2 class="modal-title">Lista de Tarefas Supero</h2>
         <form>
             <div class="row">
-                <div class="col-6">
+                <div class="col-md-6 col-lg-6">
                     <div class="form-group">
                         <label for="titulo">Titulo</label>
-                        <input type="text" class="form-control" id="titulo" placeholder="Titulo task" ng-model="request.Titulo">
+                        <input type="text" class="form-control" id="titulo" placeholder="Informe o titulo da tarefa" ng-model="request.Titulo" required />
                     </div>
                 </div>
 
-                <div class="col-6">
+                <div class="col-md-6  col-lg-6">
                     <div class="form-group">
                         <label for="descricao">Descricao</label>
-                        <input type="text" class="form-control" id="descricao" placeholder="Descricao task" ng-model="request.Descricao">
+                        <input type="text" class="form-control" id="descricao" placeholder="Informe a descricao da tarefa" ng-model="request.Descricao" required />
                     </div>
                 </div>
-
             </div>
 
             <div class="row">
-                <div class="col-4">
+
+                <div class="col-md-6  col-lg-6">
                     <div class="form-group">
                         <label for="status">Status</label>
                         <select class="form-control" ng-model="request.Status">
@@ -42,21 +50,30 @@
                         </select>
                     </div>
                 </div>
+
+                <div class="col-md-6  col-lg-6">
+                    <div class="form-group">
+                        <label for="dataConclusao">Data Conclusao</label>
+                        <input id="datepicker" class="form-control" name="date" placeholder="MM/DD/YYY" type="date" ng-model="request.DataConclusao" required />
+                    </div>
+                </div>
+
             </div>
 
-            <button type="submit" class="btn btn-primary" ng-click="salvar()">Salvar</button>
-            <button type="submit" class="btn btn-default">Cancelar</button>
-            <button type="submit" class="btn btn-danger">Excluir</button>
+            <button type="submit" class="btn btn-success" ng-click="salvar()">Salvar</button>
+            <button type="button" class="btn btn-default" ng-click="cancelar()">Cancelar</button>
+            <button type="button" class="btn btn-danger" ng-click="deletar()" ng-disabled="request.Id == 0" >Excluir</button>
         </form>
-
+        </br>
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th>#</th>
+                    <th>Id</th>
                     <th>Titulo</th>
                     <th>Descricao</th>
                     <th>Status</th>
                     <th>Data Criacao</th>
+                    <th>Data Conclusao</th>
                     <th>Acoes</th>
                 </tr>
             </thead>
@@ -67,13 +84,17 @@
                     <td>{{ task.Descricao }}</td>
                     <td>{{ task.DescricaoStatus }}</td>
                     <td>{{ task.DataCriacao | date:"dd/MM/yyyy" }}</td>
-                    <td><button>Editar</button></td>
+                    <td>{{ task.DataConclusao | date:"dd/MM/yyyy" }}</td>
+                    <td>
+                        <a class="fas fa-edit" href="#" ng-click="editar(task)" title="Editar este item"></a>
+                    </td>
                 </tr>
             </tbody>
         </table>
     </div>
 
 </body>
+
 <script src="../Scripts/angular.min.js"></script>
 <script src="../Scripts/angular-resource.min.js"></script>
 <script src="../Scripts/bootstrap.min.js"></script>
@@ -81,4 +102,5 @@
 <script src="../Scripts/bootstrap.bundle.min.js"></script>
 <script src="../Scripts/Supero/main.js"></script>
 <script src="../Scripts/Supero/TaskController.js"></script>
+
 </html>

@@ -80,7 +80,7 @@ namespace Supero_Database.Infraestrutura
             {
 
                 return Fluently.Configure()
-                          .Database(MsSqlConfiguration.MsSql2012.ConnectionString(x => x
+                          .Database(MsSqlConfiguration.MsSql2012.DefaultSchema(Parametros.Schema).ConnectionString(x => x
                               .Server(Parametros.HostServidor)
                               .Username(Parametros.Usuario)
                               .Password(Parametros.Senha)

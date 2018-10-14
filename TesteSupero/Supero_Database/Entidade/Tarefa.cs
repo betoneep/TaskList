@@ -15,5 +15,6 @@ namespace Supero_Database.Entidade
         public virtual string DescricaoStatus { get; set; }
         public virtual DateTime DataCriacao { get; set; }
         public virtual DateTime DataAlteracao { get; set; }
+        public virtual DateTime DataConclusao { get; set; }
     }
 }

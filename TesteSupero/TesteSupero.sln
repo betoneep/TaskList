@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Supero_Negocio", "Supero_Ne
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Supero_Console", "Supero_Console\Supero_Console.csproj", "{289EE361-AD21-4FD4-9774-AA0B8081EFCC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Supero_Comum", "Supero_Comum\Supero_Comum.csproj", "{99B216B1-CD58-47DD-B31E-796247C67E90}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,11 +35,36 @@ Global
 		{289EE361-AD21-4FD4-9774-AA0B8081EFCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{289EE361-AD21-4FD4-9774-AA0B8081EFCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{289EE361-AD21-4FD4-9774-AA0B8081EFCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99B216B1-CD58-47DD-B31E-796247C67E90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99B216B1-CD58-47DD-B31E-796247C67E90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99B216B1-CD58-47DD-B31E-796247C67E90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99B216B1-CD58-47DD-B31E-796247C67E90}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3876BBE0-7D9E-463D-8B49-90DA85938898}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://betoneep.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = TesteSupero\\TesteSupero.csproj
+		SccProjectName1 = TesteSupero
+		SccLocalPath1 = TesteSupero
+		SccProjectUniqueName2 = Supero_Database\\Supero_Database.csproj
+		SccProjectName2 = Supero_Database
+		SccLocalPath2 = Supero_Database
+		SccProjectUniqueName3 = Supero_Negocio\\Supero_Negocio.csproj
+		SccProjectName3 = Supero_Negocio
+		SccLocalPath3 = Supero_Negocio
+		SccProjectUniqueName4 = Supero_Console\\Supero_Console.csproj
+		SccProjectName4 = Supero_Console
+		SccLocalPath4 = Supero_Console
+		SccProjectUniqueName5 = Supero_Comum\\Supero_Comum.csproj
+		SccProjectName5 = Supero_Comum
+		SccLocalPath5 = Supero_Comum
 	EndGlobalSection
 EndGlobal

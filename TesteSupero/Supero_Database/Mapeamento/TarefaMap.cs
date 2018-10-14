@@ -20,6 +20,7 @@ namespace Supero_Database.Mapeamento
             Map(x => x.Status).Column("Cd_Status").Precision(10);
             Map(x => x.DataCriacao).Column("DataCriacao").Not.Nullable();
             Map(x => x.DataAlteracao).Column("DataAlteracao").Not.Nullable();
+            Map(x => x.DataConclusao).Column("DataConclusao").Not.Nullable();
         }
     }
 }

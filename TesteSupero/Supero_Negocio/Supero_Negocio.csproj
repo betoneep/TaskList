@@ -11,6 +11,10 @@
     <AssemblyName>Supero_Negocio</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -43,11 +47,13 @@
   <ItemGroup>
     <Compile Include="Controle\ControleTarefa.cs" />
     <Compile Include="Controle\Controller.cs" />
-    <Compile Include="Enum\Enumeradores.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Util\Conversoes.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Supero_Comum\Supero_Comum.csproj">
+      <Project>{99b216b1-cd58-47dd-b31e-796247c67e90}</Project>
+      <Name>Supero_Comum</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Supero_Database\Supero_Database.csproj">
       <Project>{0c29b552-18a6-44d0-8b64-aaeac924efcc}</Project>
       <Name>Supero_Database</Name>

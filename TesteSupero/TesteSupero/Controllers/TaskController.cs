@@ -1,10 +1,7 @@
-﻿using Supero_Database.Entidade;
+﻿using Supero_Comum.Util;
+using Supero_Database.Entidade;
 using Supero_Negocio.Controle;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace TesteSupero.Controllers
@@ -12,6 +9,7 @@ namespace TesteSupero.Controllers
     public class TaskController : ApiController
     {
         [HttpPost]
+        [ActionName("SalvarTarefa")]
         public IHttpActionResult Salvar(Tarefa tarefa)
         {
             try
@@ -23,7 +21,6 @@ namespace TesteSupero.Controllers
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
-
             }
         }
 
@@ -32,13 +29,30 @@ namespace TesteSupero.Controllers
         {
             try
             {
+           
                 return Ok(Controller.ControleTarefa().Get());
             }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
+        }
 
+        [HttpPost]
+        [ActionName("RemoverTarefa")]
+        public IHttpActionResult Delete([FromBody]string Id)
+        {
+            try
+            {
+                Controller.ControleTarefa().DeleteById(Id.ToInt());
+
+                return Ok($"Tarefa [{Id}] removida com sucesso");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+
+            }
         }
     }
 }

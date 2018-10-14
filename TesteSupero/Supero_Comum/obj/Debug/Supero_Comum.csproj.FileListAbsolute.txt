@@ -1,0 +1,6 @@
+G:\TFS\TaskList\Supero_Comum\bin\Debug\Supero_Comum.dll
+G:\TFS\TaskList\Supero_Comum\bin\Debug\Supero_Comum.pdb
+G:\TFS\TaskList\Supero_Comum\bin\Debug\Supero_Comum.tlb
+G:\TFS\TaskList\Supero_Comum\obj\Debug\Supero_Comum.csproj.CoreCompileInputs.cache
+G:\TFS\TaskList\Supero_Comum\obj\Debug\Supero_Comum.dll
+G:\TFS\TaskList\Supero_Comum\obj\Debug\Supero_Comum.pdb

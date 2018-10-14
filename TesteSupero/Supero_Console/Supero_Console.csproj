@@ -11,6 +11,10 @@
     <AssemblyName>Supero_Console</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -75,6 +79,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Supero_Comum\Supero_Comum.csproj">
+      <Project>{99b216b1-cd58-47dd-b31e-796247c67e90}</Project>
+      <Name>Supero_Comum</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Supero_Database\Supero_Database.csproj">
       <Project>{0C29B552-18A6-44D0-8B64-AAEAC924EFCC}</Project>
       <Name>Supero_Database</Name>

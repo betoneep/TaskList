@@ -1,6 +1,6 @@
-﻿using Supero_Database.Abstract;
+﻿using Supero_Comum.Enum;
+using Supero_Database.Abstract;
 using Supero_Database.Entidade;
-using Supero_Negocio.Enum;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,15 +16,49 @@ namespace Supero_Negocio.Controle
             return base.GetByWhere(t => t.Id == id).FirstOrDefault();
         }
 
+        private bool Exists(int? id)
+        {
+            return base.GetByWhere(t => t.Id == id).Any();
+        }
+
+        public override void Delete(Tarefa entidade)
+        {
+            try
+            {
+                base.Delete(GetById(entidade.Id));
+            }
+            catch (Exception ex )
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         public void Salvar(Tarefa tarefa)
         {
             try
             {
+                tarefa.DataCriacao = (Exists(tarefa.Id) ? tarefa.DataCriacao : DateTime.Now);
                 tarefa.DataAlteracao = DateTime.Now;
-                tarefa.DataAlteracao = DateTime.Now;
-                tarefa.DataCriacao = DateTime.Now;
+                tarefa.DataConclusao = (tarefa.DataConclusao.Year < 1000 ? DateTime.Now.AddDays(7) : tarefa.DataConclusao);
+
                 tarefa.DescricaoStatus = GetDescricaoStatus(tarefa.Status);
+
                 base.Save(tarefa);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void DeleteById(int Id)
+        {
+            try
+            {
+                if (Exists(Id))
+                {
+                    base.Delete(GetById(Id));
+                }
             }
             catch (Exception ex)
             {
@@ -74,23 +108,23 @@ namespace Supero_Negocio.Controle
 
         public void Teste()
         {
-        //    var teste = Get().FirstOrDefault();
+            //    var teste = Get().FirstOrDefault();
 
 
-        //    var teste2 = new Tarefa
-        //    {
-        //        CdStatus = 1,
-        //        Descricao = "TESTE",
-        //        DescricaoStatus = "ewewe",
-        //        Titulo = "ewew",
-        //        DataAlteracao = DateTime.Now,
-        //        DataCriacao = DateTime.Now
-        //};
+            //    var teste2 = new Tarefa
+            //    {
+            //        CdStatus = 1,
+            //        Descricao = "TESTE",
+            //        DescricaoStatus = "ewewe",
+            //        Titulo = "ewew",
+            //        DataAlteracao = DateTime.Now,
+            //        DataCriacao = DateTime.Now
+            //};
 
-        //    base.Save(teste2);
+            //    base.Save(teste2);
 
 
-        //    base.Save(teste);
+            //    base.Save(teste);
         }
     }
 }

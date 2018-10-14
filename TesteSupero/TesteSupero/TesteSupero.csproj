@@ -26,6 +26,10 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TypeScriptToolsVersion>2.8</TypeScriptToolsVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -972,6 +976,10 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Supero_Comum\Supero_Comum.csproj">
+      <Project>{99B216B1-CD58-47DD-B31E-796247C67E90}</Project>
+      <Name>Supero_Comum</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Supero_Database\Supero_Database.csproj">
       <Project>{0C29B552-18A6-44D0-8B64-AAEAC924EFCC}</Project>
       <Name>Supero_Database</Name>

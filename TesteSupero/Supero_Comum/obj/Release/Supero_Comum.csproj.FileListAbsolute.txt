@@ -1,0 +1,5 @@
+G:\TFS\TaskList\Supero_Comum\bin\Release\Supero_Comum.dll
+G:\TFS\TaskList\Supero_Comum\bin\Release\Supero_Comum.pdb
+G:\TFS\TaskList\Supero_Comum\obj\Release\Supero_Comum.csproj.CoreCompileInputs.cache
+G:\TFS\TaskList\Supero_Comum\obj\Release\Supero_Comum.dll
+G:\TFS\TaskList\Supero_Comum\obj\Release\Supero_Comum.pdb

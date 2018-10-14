@@ -29,5 +29,10 @@ namespace Supero_Database.Globais
         {
             get { return new AppSettingsReader().GetValue("NameDb", typeof(System.String)).ToString(); }
         }
+
+        public static string Schema
+        {
+            get { return new AppSettingsReader().GetValue("SchemaDb", typeof(System.String)).ToString(); }
+        }
     }
 }
